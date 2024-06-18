@@ -1,0 +1,16 @@
+blinker      
+chardet        
+click          
+colorama       
+Flask        
+Flask-WTF      
+itsdangerous   
+Jinja2         
+MarkupSafe     
+pillow        
+pip            
+PyPDF2         
+reportlab      
+Werkzeug       
+WTForms
+gunicorn       

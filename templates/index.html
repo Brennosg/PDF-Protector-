@@ -1,0 +1,47 @@
+<!--Esse código HTML representa a estrutura da nossa página web. 
+Ele exibe o formulário ao usuário e solicita as informações necessárias.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protetor de PDF</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div class="container">
+        <h2>Protetor de PDF</h2>
+    <hr />
+    <form method="POST" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      <div>
+        <label for="cpf">CPF</label>
+        {{ form.cpf(size=20) }}
+      </div>
+      <div>
+        <label for="position">Posição</label>
+        {{ form.position() }}
+      </div>
+      <div>
+        <label for="color">Cor</label>
+        <input type="color" name="color" id="color" />
+      </div>
+      <div>
+        <label for="file">Escolher arquivo</label>
+        <input type="file" name="file" id="file" />
+      </div>
+      <div>
+        <input type="submit" name="Submeter" />
+      </div>
+
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %}
+    </form>
+    </div>
+  </body>
+</html>
